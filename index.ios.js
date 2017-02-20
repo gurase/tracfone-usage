@@ -1,53 +1,47 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+'use strict';
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry,
+    NavigatorIOS,
+    StyleSheet,
+    Text,
+    View
 } from 'react-native';
 
-export default class TracfoneUsage extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
+class HelloWorld extends Component {
+    render() {
+        return (
+            <Text style={styles.welcome}>
+            Welcome to React Native!
+            </Text>
+        );
+    }
+}
+
+class TracfoneUsage extends Component {
+    render() {
+        return (
+            <NavigatorIOS
+                style={styles.container}
+                initialRoute={{
+                    title: 'Tracfone Usage',
+                    component: HelloWorld
+                }}/>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    container: {
+        flex: 1
+    },
+    welcome: {
+        fontSize: 30,
+        color: 'black',
+        textAlign: 'center',
+        margin: 80,
+    }
 });
 
 AppRegistry.registerComponent('TracfoneUsage', () => TracfoneUsage);
